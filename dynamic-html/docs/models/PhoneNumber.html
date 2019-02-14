@@ -1,0 +1,47 @@
+
+<h2>PhoneNumber</h2>
+<ul class="parameter">
+  <li class="param-required-false">isPreferred : Boolean
+    <br/>Required to be true for one and only one entry to indicate the preferred phone number.  Assumed to be &#x27;false&#x27; if not present
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">purpose : String
+    <br/>The purpose of the number as specified by the customer
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>MOBILE</dd>
+            <dd>HOME</dd>
+            <dd>WORK</dd>
+            <dd>OTHER</dd>
+            <dd>INTERNATIONAL</dd>
+            <dd>UNSPECIFIED</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">countryCode : String
+    <br/>If absent, assumed to be Australia (+61). The + should be included
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">areaCode : String
+    <br/>Required for non Mobile Phones, if field is present and refers to Australian code - the leading 0 should be omitted.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">number : String
+    <br/>The actual phone number, with leading zeros as appropriate
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">extension : String
+    <br/>An extension number (if applicable)
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">fullNumber : String
+    <br/>Fully formatted phone number with country code, area code, number and extension incorporated. Formatted according to section 5.1.4. of RFC 3966
+  </li>
+</ul>

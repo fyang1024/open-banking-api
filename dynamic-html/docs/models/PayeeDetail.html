@@ -1,0 +1,61 @@
+
+<h2>PayeeDetail</h2>
+<ul class="parameter">
+  <li class="param-required-true">payeeId : String
+    <br/>ID of the payee adhering to the rules of ID permanence
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">nickname : String
+    <br/>The short display name of the payee as provided by the customer
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">description : String
+    <br/>A description of the payee provided by the customer
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">type : String
+    <br/>The type of payee. DOMESTIC means a registered payee for domestic payments including NPP. INTERNATIONAL means a registered payee for international payments. BILLER means a registered payee for BPAY
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>DOMESTIC</dd>
+            <dd>INTERNATIONAL</dd>
+            <dd>BILLER</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">creationDate : String
+    <br/>The date the payee was created by the customer
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">payeeUType : String
+    <br/>Type of object included that describes the payee in detail
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>domestic</dd>
+            <dd>biller</dd>
+            <dd>international</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">domestic : DomesticPayee
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">biller : BillerPayee
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">international : InternationalPayee
+    <br/>
+  </li>
+</ul>

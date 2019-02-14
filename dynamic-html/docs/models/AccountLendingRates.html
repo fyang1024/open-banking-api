@@ -1,0 +1,41 @@
+
+<h2>AccountLendingRates</h2>
+<ul class="parameter">
+  <li class="param-required-true">lendingRateType : String
+    <br/>The type of rate (fixed, variable, etc). See the next section for an overview of valid values and their meaning
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>FIXED</dd>
+            <dd>INTRODUCTORY</dd>
+            <dd>DISCOUNT</dd>
+            <dd>PENALTY</dd>
+            <dd>BUNDLE_DISCOUNT</dd>
+            <dd>FLOATING</dd>
+            <dd>MARKET_LINKED</dd>
+            <dd>CASH_ADVANCE</dd>
+            <dd>VARIABLE</dd>
+            <dd>COMPARISON</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">rate : String
+    <br/>The rate to be applied
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalValue : String
+    <br/>Information relevant to the lendingRateType specified.  Whether mandatory or not is dependent on the Generic field containing additional information relevant to the lendingRateType specified. Whether mandatory or not is dependent on the value of lendingRateType
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalInfo : String
+    <br/>Display text providing more information on the fee.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalInfoUri : String
+    <br/>Link to a web page with more information  on this fee
+  </li>
+</ul>

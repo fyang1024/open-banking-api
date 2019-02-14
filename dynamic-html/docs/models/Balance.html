@@ -1,0 +1,34 @@
+
+<h2>Balance</h2>
+<ul class="parameter">
+  <li class="param-required-true">accountId : String
+    <br/>A unique ID of the account adhering to the standards for ID permanence
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">balanceUType : String
+    <br/>The type of balance object provided for the account
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>deposit</dd>
+            <dd>lending</dd>
+            <dd>purses</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">deposit : DepositBalance
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">lending : LendingBalance
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">purses : List
+    <br/>
+  </li>
+</ul>
