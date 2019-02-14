@@ -1,0 +1,92 @@
+controllerPackage: io.swagger.controllers
+modelPackage:  io.swagger.model
+swaggerUrl: ./src/main/resources/openapi3.yaml
+modelMappings:
+  # to enable explicit mappings, use this syntax:
+  DefinitionFromSwaggerSpecification: fully.qualified.path.to.Model
+  Account : io.swagger.model.Account
+AccountDepositRates : io.swagger.model.AccountDepositRates
+AccountDetail : io.swagger.model.AccountDetail
+AccountDiscounts : io.swagger.model.AccountDiscounts
+AccountFeatures : io.swagger.model.AccountFeatures
+AccountFees : io.swagger.model.AccountFees
+AccountLendingRates : io.swagger.model.AccountLendingRates
+AuthorisedEntity : io.swagger.model.AuthorisedEntity
+Balance : io.swagger.model.Balance
+BillerPayee : io.swagger.model.BillerPayee
+CreditCardAccount : io.swagger.model.CreditCardAccount
+CurrencyAmount : io.swagger.model.CurrencyAmount
+DepositBalance : io.swagger.model.DepositBalance
+DirectDebits : io.swagger.model.DirectDebits
+DomesticPayee : io.swagger.model.DomesticPayee
+DomesticPayeeAccount : io.swagger.model.DomesticPayeeAccount
+DomesticPayeeCard : io.swagger.model.DomesticPayeeCard
+DomesticPayeePayId : io.swagger.model.DomesticPayeePayId
+EmailAddress : io.swagger.model.EmailAddress
+EnumProductCategory : io.swagger.model.EnumProductCategory
+ErrorList : io.swagger.model.ErrorList
+ErrorListErrors : io.swagger.model.ErrorListErrors
+InternationalPayee : io.swagger.model.InternationalPayee
+InternationalPayeeBankDetails : io.swagger.model.InternationalPayeeBankDetails
+InternationalPayeeBankDetailsBankAddress : io.swagger.model.InternationalPayeeBankDetailsBankAddress
+InternationalPayeeBeneficiaryDetails : io.swagger.model.InternationalPayeeBeneficiaryDetails
+LendingBalance : io.swagger.model.LendingBalance
+Links : io.swagger.model.Links
+LinksPaginated : io.swagger.model.LinksPaginated
+LoanAccount : io.swagger.model.LoanAccount
+Meta : io.swagger.model.Meta
+MetaPaginated : io.swagger.model.MetaPaginated
+Organisation : io.swagger.model.Organisation
+OrganisationDetail : io.swagger.model.OrganisationDetail
+PAFAddress : io.swagger.model.PAFAddress
+Payee : io.swagger.model.Payee
+PayeeDetail : io.swagger.model.PayeeDetail
+Person : io.swagger.model.Person
+PersonDetail : io.swagger.model.PersonDetail
+PhoneNumber : io.swagger.model.PhoneNumber
+PhysicalAddress : io.swagger.model.PhysicalAddress
+PhysicalAddressWithPurpose : io.swagger.model.PhysicalAddressWithPurpose
+Product : io.swagger.model.Product
+ProductAdditionalInformation : io.swagger.model.ProductAdditionalInformation
+ProductBundles : io.swagger.model.ProductBundles
+ProductConstraints : io.swagger.model.ProductConstraints
+ProductDepositRates : io.swagger.model.ProductDepositRates
+ProductDetail : io.swagger.model.ProductDetail
+ProductDiscounts : io.swagger.model.ProductDiscounts
+ProductEligibility : io.swagger.model.ProductEligibility
+ProductFeatures : io.swagger.model.ProductFeatures
+ProductFees : io.swagger.model.ProductFees
+ProductLendingRates : io.swagger.model.ProductLendingRates
+RequestAccountIds : io.swagger.model.RequestAccountIds
+RequestAccountIdsData : io.swagger.model.RequestAccountIdsData
+ResponseBankingAccount : io.swagger.model.ResponseBankingAccount
+ResponseBankingAccounts : io.swagger.model.ResponseBankingAccounts
+ResponseBankingAccountsBalances : io.swagger.model.ResponseBankingAccountsBalances
+ResponseBankingAccountsBalancesData : io.swagger.model.ResponseBankingAccountsBalancesData
+ResponseBankingAccountsData : io.swagger.model.ResponseBankingAccountsData
+ResponseBankingDirectDebits : io.swagger.model.ResponseBankingDirectDebits
+ResponseBankingDirectDebitsData : io.swagger.model.ResponseBankingDirectDebitsData
+ResponseBankingPayeeDetails : io.swagger.model.ResponseBankingPayeeDetails
+ResponseBankingPayees : io.swagger.model.ResponseBankingPayees
+ResponseBankingPayeesData : io.swagger.model.ResponseBankingPayeesData
+ResponseBankingProduct : io.swagger.model.ResponseBankingProduct
+ResponseBankingProducts : io.swagger.model.ResponseBankingProducts
+ResponseBankingProductsData : io.swagger.model.ResponseBankingProductsData
+ResponseBankingTransactionDetail : io.swagger.model.ResponseBankingTransactionDetail
+ResponseBankingTransactionDetailData : io.swagger.model.ResponseBankingTransactionDetailData
+ResponseBankingTransactions : io.swagger.model.ResponseBankingTransactions
+ResponseBankingTransactionsData : io.swagger.model.ResponseBankingTransactionsData
+ResponseCommonCustomer : io.swagger.model.ResponseCommonCustomer
+ResponseCommonCustomerData : io.swagger.model.ResponseCommonCustomerData
+ResponseCommonCustomerDetailed : io.swagger.model.ResponseCommonCustomerDetailed
+ResponseCommonCustomerDetailedData : io.swagger.model.ResponseCommonCustomerDetailedData
+SimpleAddress : io.swagger.model.SimpleAddress
+TermDepositAccount : io.swagger.model.TermDepositAccount
+Transaction : io.swagger.model.Transaction
+TransactionDetail : io.swagger.model.TransactionDetail
+TransactionDetailExtendedData : io.swagger.model.TransactionDetailExtendedData
+
+entityProcessors:
+  - json
+  - xml
+  - yaml
