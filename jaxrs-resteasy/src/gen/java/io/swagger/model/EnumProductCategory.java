@@ -1,0 +1,10 @@
+package io.swagger.model;
+
+import java.util.Objects;
+import java.util.ArrayList;
+import io.swagger.v3.oas.annotations.media.Schema;
+import com.fasterxml.jackson.annotation.JsonValue;
+import javax.validation.constraints.*;
+public enum EnumProductCategory {
+    {values&#x3D;[PERS_AT_CALL_DEPOSITS, BUS_AT_CALL_DEPOSITS, TERM_DEPOSITS, RESIDENTIAL_MORTGAGES, PERS_CRED_AND_CHRG_CARDS, BUS_CRED_AND_CHRG_CARDS, PERS_LOANS, PERS_LEASING, BUS_LEASING, TRADE_FINANCE, PERS_OVERDRAFT, BUS_OVERDRAFT, BUS_LOANS, FOREIGN_CURR_AT_CALL_DEPOSITS, FOREIGN_CURR_TERM_DEPOSITS, FOREIGN_CURR_LOAN, FOREIGN_CURRRENCT_OVERDRAFT, TRAVEL_CARD], enumVars&#x3D;[{name&#x3D;PERS_AT_CALL_DEPOSITS, value&#x3D;&quot;PERS_AT_CALL_DEPOSITS&quot;}, {name&#x3D;BUS_AT_CALL_DEPOSITS, value&#x3D;&quot;BUS_AT_CALL_DEPOSITS&quot;}, {name&#x3D;TERM_DEPOSITS, value&#x3D;&quot;TERM_DEPOSITS&quot;}, {name&#x3D;RESIDENTIAL_MORTGAGES, value&#x3D;&quot;RESIDENTIAL_MORTGAGES&quot;}, {name&#x3D;PERS_CRED_AND_CHRG_CARDS, value&#x3D;&quot;PERS_CRED_AND_CHRG_CARDS&quot;}, {name&#x3D;BUS_CRED_AND_CHRG_CARDS, value&#x3D;&quot;BUS_CRED_AND_CHRG_CARDS&quot;}, {name&#x3D;PERS_LOANS, value&#x3D;&quot;PERS_LOANS&quot;}, {name&#x3D;PERS_LEASING, value&#x3D;&quot;PERS_LEASING&quot;}, {name&#x3D;BUS_LEASING, value&#x3D;&quot;BUS_LEASING&quot;}, {name&#x3D;TRADE_FINANCE, value&#x3D;&quot;TRADE_FINANCE&quot;}, {name&#x3D;PERS_OVERDRAFT, value&#x3D;&quot;PERS_OVERDRAFT&quot;}, {name&#x3D;BUS_OVERDRAFT, value&#x3D;&quot;BUS_OVERDRAFT&quot;}, {name&#x3D;BUS_LOANS, value&#x3D;&quot;BUS_LOANS&quot;}, {name&#x3D;FOREIGN_CURR_AT_CALL_DEPOSITS, value&#x3D;&quot;FOREIGN_CURR_AT_CALL_DEPOSITS&quot;}, {name&#x3D;FOREIGN_CURR_TERM_DEPOSITS, value&#x3D;&quot;FOREIGN_CURR_TERM_DEPOSITS&quot;}, {name&#x3D;FOREIGN_CURR_LOAN, value&#x3D;&quot;FOREIGN_CURR_LOAN&quot;}, {name&#x3D;FOREIGN_CURRRENCT_OVERDRAFT, value&#x3D;&quot;FOREIGN_CURRRENCT_OVERDRAFT&quot;}, {name&#x3D;TRAVEL_CARD, value&#x3D;&quot;TRAVEL_CARD&quot;}]}
+}
