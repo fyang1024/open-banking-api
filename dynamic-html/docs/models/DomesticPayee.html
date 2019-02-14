@@ -1,0 +1,29 @@
+
+<h2>DomesticPayee</h2>
+<ul class="parameter">
+  <li class="param-required-true">payeeAccountUType : String
+    <br/>Type of account object included. Valid values are: { payeeAccountUType - - account A standard Australian account defined by BSB/Account Number payId A PayID recognised by NPP
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>account</dd>
+            <dd>card</dd>
+            <dd>payId</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">account : DomesticPayeeAccount
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">card : DomesticPayeeCard
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">payId : DomesticPayeePayId
+    <br/>
+  </li>
+</ul>

@@ -1,0 +1,97 @@
+
+<h2>ProductDetail</h2>
+<ul class="parameter">
+  <li class="param-required-true">productId : String
+    <br/>A provider specific unique identifier for this product. This identifier must be unique to a product but does not otherwise need to adhere to ID permanence guidelines.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">effectiveFrom : String
+    <br/>The date and time from which this product is effective (ie. is available for origination).  Used to enable the articulation of products to the regime before they are available for customers to originate
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">effectiveTo : String
+    <br/>The date and time at which this product will be retired and will no longer be offered.  Used to enable the managed deprecation of products
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">lastUpdated : String
+    <br/>The last date and time that the information for this product was changed (or the creation date for the product if it has never been altered)
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">productCategory : EnumProductCategory
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">name : String
+    <br/>The display name of the product
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">description : String
+    <br/>A description of the product
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">brand : String
+    <br/>A label of the brand for the product. Able to be used for filtering. For data providers with single brands this value is still required
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">brandName : String
+    <br/>An optional display name of the brand
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">applicationUri : String
+    <br/>A link to the an application web page where this product can be applied for.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">isTailored : Boolean
+    <br/>Indicates whether the product is specifically tailored to a circumstance.  In this case fees and prices are significantly negotiated depending on context. While all products are open to a degree of tailoring this flag indicates that tailoring is expected and thus that the provision of specific fees and rates is not applicable
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalInformation : Product_additionalInformation
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">bundles : List
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">features : List
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">constraints : List
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">eligibility : List
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">fees : List
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">depositRates : List
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">lendingRates : List
+    <br/>
+  </li>
+</ul>

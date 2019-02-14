@@ -1,0 +1,37 @@
+
+<h2>TransactionDetail_extendedData</h2>
+<ul class="parameter">
+  <li class="param-required-false">payer : String
+    <br/>Name or description of the originating payer.  Mandatory for inbound payment
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">payee : String
+    <br/>Name or description of the target payee. Mandatory for an outbound payment
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">extensionUType : String
+    <br/>Optional extended data provided specific to transaction originated via NPP
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>extendedDescription</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">extendedDescription : String
+    <br/>An extended string description. Only present if specified by the extensionUType field
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">serviceId : String
+    <br/>Identifier of the applicable NPP payment service
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>X2P1.01</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>

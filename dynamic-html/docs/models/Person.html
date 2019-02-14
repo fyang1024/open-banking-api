@@ -1,0 +1,37 @@
+
+<h2>Person</h2>
+<ul class="parameter">
+  <li class="param-required-true">lastUpdateTime : String
+    <br/>The date and time that this record was last updated by the customer.  If no update has occurred then this date should reflect the initial creation date for the data
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">firstName : String
+    <br/>For people with single names this field need not be present.  The single name should be in the lastName field
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">lastName : String
+    <br/>For people with single names the single name should be in this field
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">middleNames : List
+    <br/>Field is mandatory but array may be empty
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">prefix : String
+    <br/>Also known as title or salutation.  The prefix to the name (e.g. Mr, Mrs, Ms, Miss, Sir, etc)
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">suffix : String
+    <br/>Used for a trailing suffix to the name (e.g. Jr)
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">occupationCode : String
+    <br/>Value is a valid [ANZCO v1.2](http://www.abs.gov.au/ANZSCO) Standard Occupation classification.
+  </li>
+</ul>

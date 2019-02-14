@@ -1,0 +1,36 @@
+
+<h2>ProductDepositRates</h2>
+<ul class="parameter">
+  <li class="param-required-true">depositRateType : String
+    <br/>The type of rate (base, bonus, etc). See the next section for an overview of valid values and their meaning
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>FIXED</dd>
+            <dd>BONUS</dd>
+            <dd>BUNDLE_BONUS</dd>
+            <dd>VARIABLE</dd>
+            <dd>INTRODUCTORY</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">rate : String
+    <br/>The rate to be applied
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalValue : String
+    <br/>Generic field containing additional information relevant to the depositRateType specified. Whether mandatory or not is dependent on the value of depositRateType
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalInfo : String
+    <br/>Display text providing more information on the fee
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalInfoUri : String
+    <br/>Link to a web page with more information on this fee
+  </li>
+</ul>

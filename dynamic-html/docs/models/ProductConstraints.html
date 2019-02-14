@@ -1,0 +1,20 @@
+
+<h2>ProductConstraints</h2>
+<ul class="parameter">
+  <li class="param-required-true">constraintType : String
+    <br/>The type of constraint described.  See the next section for an overview of valid values and their meaning
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>MIN_BALANCE</dd>
+            <dd>OPENING_BALANCE</dd>
+            <dd>MAX_LIMIT</dd>
+            <dd>MIN_LIMIT</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">additionalValue : String
+    <br/>Generic field containing additional information relevant to the constraintType specified.  Whether mandatory or not is dependent on the value of constraintType
+  </li>
+</ul>

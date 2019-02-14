@@ -1,0 +1,48 @@
+
+<h2>Account</h2>
+<ul class="parameter">
+  <li class="param-required-true">accountId : String
+    <br/>A unique ID of the account adhering to the standards for ID permanence
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">displayName : String
+    <br/>The display name of the account. If a customer provided nickname is available that value should be returned
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">nickname : String
+    <br/>A customer supplied nick name for the account
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">maskedNumber : String
+    <br/>A masked version of the account. Whether BSB/Account Number, Credit Card PAN or another number this should be formatted with each digit masked and the last three digits unmasked
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">openStatus : String
+    <br/>Open or closed status for the account.  If not present then OPEN is assumed
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>OPEN</dd>
+            <dd>CLOSED</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">isOwned : Boolean
+    <br/>Flag indicating that the customer associated with the authorisation is an owner of the account.  Does not indicate sole ownership, however.  If no present then &#x27;true&#x27; is assumed
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">productCategory : EnumProductCategory
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">productName : String
+    <br/>A unique name or identifier for the account class for this account as defined by the account provider.  Not expected to be used for display
+  </li>
+</ul>
