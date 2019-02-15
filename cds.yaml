@@ -94,6 +94,9 @@ paths:
     post:
       summary: Get Balances For Specific Accounts
       description: Obtain balances for a specified list of accounts
+      security:
+        - OAuth2:
+            - accounts
       operationId: listBalancesSpecificAccounts
       x-scopes:
         - bank_basic_accounts
