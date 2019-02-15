@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-02-14T17:34:34.379921+11:00[Australia/Sydney]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-02-15T14:07:08.087118+11:00[Australia/Sydney]")
 
 @Validated
 @Api(value = "common", description = "the common API")
@@ -37,7 +37,15 @@ public interface CommonApi {
         return Optional.empty();
     }
 
-    @ApiOperation(value = "Get Customer", nickname = "getCustomer", notes = "Obtain basic information on the customer that has authorised the current session", response = ResponseCommonCustomer.class, tags={ "Customer", })
+    @ApiOperation(value = "Get Customer", nickname = "getCustomer", notes = "Obtain basic information on the customer that has authorised the current session", response = ResponseCommonCustomer.class, authorizations = {
+        @Authorization(value = "OAuth2", scopes = {
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
+            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
+            @AuthorizationScope(scope = "payees", description = "Read payees information"),
+            @AuthorizationScope(scope = "products", description = "Read products information"),
+            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            })
+    }, tags={ "Customer", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseCommonCustomer.class) })
     @RequestMapping(value = "/common/customer",
@@ -57,7 +65,15 @@ public interface CommonApi {
     }
 
 
-    @ApiOperation(value = "Get Customer Detail", nickname = "getCustomerDetail", notes = "Obtain detailed information on the authorised customer within the current session.", response = ResponseCommonCustomerDetailed.class, tags={ "Customer", })
+    @ApiOperation(value = "Get Customer Detail", nickname = "getCustomerDetail", notes = "Obtain detailed information on the authorised customer within the current session.", response = ResponseCommonCustomerDetailed.class, authorizations = {
+        @Authorization(value = "OAuth2", scopes = {
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
+            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
+            @AuthorizationScope(scope = "payees", description = "Read payees information"),
+            @AuthorizationScope(scope = "products", description = "Read products information"),
+            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            })
+    }, tags={ "Customer", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseCommonCustomerDetailed.class) })
     @RequestMapping(value = "/common/customer/detail",

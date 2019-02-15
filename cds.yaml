@@ -13,6 +13,9 @@ paths:
     get:
       summary: Get Accounts
       description: Obtain a list of accounts
+      security:
+        - OAuth2:
+            - accounts
       operationId: listAccounts
       x-scopes:
         - bank_basic_accounts
@@ -36,6 +39,9 @@ paths:
     get:
       summary: Get Account Detail
       description: Obtain detailed information on a single account
+      security:
+        - OAuth2:
+            - accounts
       operationId: getAccountDetail
       x-scopes:
         - bank_detailed_accounts
@@ -63,6 +69,9 @@ paths:
     get:
       summary: Get Bulk Balances
       description: 'Obtain balances for multiple, filtered accounts'
+      security:
+        - OAuth2:
+            - accounts
       operationId: listBalancesBulk
       x-scopes:
         - bank_basic_accounts
@@ -112,6 +121,9 @@ paths:
     get:
       summary: Get Transactions For Account
       description: Obtain transactions for a specific account
+      security:
+        - OAuth2:
+            - accounts
       operationId: getTransactions
       x-scopes:
         - bank_transactions
@@ -146,6 +158,9 @@ paths:
     get:
       summary: Get Transaction Detail
       description: Obtain detailed information on a transaction for a specific account
+      security:
+        - OAuth2:
+            - accounts
       operationId: getTransactionDetail
       x-scopes:
         - bank_transactions
@@ -180,6 +195,9 @@ paths:
     get:
       summary: Get Transactions For Multiple Accounts
       description: 'Obtain transactions for multiple, filtered accounts'
+      security:
+        - OAuth2:
+            - accounts
       operationId: listTransactionsBulk
       x-scopes:
         - bank_transactions
@@ -207,6 +225,9 @@ paths:
     post:
       summary: Get Transactions For Specific Accounts
       description: Obtain transactions for a specified list of transactions.
+      security:
+        - OAuth2:
+            - accounts
       operationId: listTransactionsSpecificAccounts
       x-scopes:
         - bank_transactions
@@ -242,6 +263,9 @@ paths:
     get:
       summary: Get Direct Debits For Account
       description: Obtain direct debit authorisations for a specific account
+      security:
+        - OAuth2:
+            - direct-debits
       operationId: listDirectDebits
       x-scopes:
         - bank_detailed_accounts
@@ -271,6 +295,9 @@ paths:
     get:
       summary: Get Bulk Direct Debits
       description: 'Obtain direct debit authorisations for multiple, filtered accounts'
+      security:
+        - OAuth2:
+            - direct-debits
       operationId: listDirectDebitsBulk
       x-scopes:
         - bank_detailed_accounts
@@ -292,6 +319,9 @@ paths:
     post:
       summary: Get Direct Debits For Specific Accounts
       description: Obtain direct debit authorisations for a specified list of accounts
+      security:
+        - OAuth2:
+            - direct-debits
       operationId: listDirectDebitsSpecificAccounts
       x-scopes:
         - bank_detailed_accounts
@@ -319,6 +349,9 @@ paths:
     get:
       summary: Get Payees
       description: Obtain a list of pre-registered payees
+      security:
+        - OAuth2:
+            - payees
       operationId: listPayees
       x-scopes:
         - bank_basic_accounts
@@ -353,6 +386,9 @@ paths:
     get:
       summary: Get Payee Detail
       description: Obtain detailed information on a single payee
+      security:
+        - OAuth2:
+            - payees
       operationId: getPayeeDetail
       x-scopes:
         - bank_payees
@@ -380,6 +416,9 @@ paths:
       description: >-
         Obtain a list of products that are currently openly offered to the
         market
+      security:
+        - OAuth2:
+            - products
       operationId: listProducts
       x-scopes: []
       tags:
@@ -432,6 +471,9 @@ paths:
       description: >-
         Obtain detailed information on a single product offered openly to the
         market
+      security:
+        - OAuth2:
+            - products
       operationId: getProductDetail
       x-scopes: []
       tags:
@@ -458,6 +500,9 @@ paths:
       description: >-
         Obtain basic information on the customer that has authorised the current
         session
+      security:
+        - OAuth2:
+            - customer
       operationId: getCustomer
       x-scopes:
         - common_basic_customer
@@ -477,6 +522,9 @@ paths:
       description: >-
         Obtain detailed information on the authorised customer within the
         current session.
+      security:
+        - OAuth2:
+            - customer
       operationId: getCustomerDetail
       x-scopes:
         - common_detailed_customer
@@ -2822,3 +2870,15 @@ components:
         - FOREIGN_CURR_LOAN
         - FOREIGN_CURRRENCT_OVERDRAFT
         - TRAVEL_CARD
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: /oauth2/authorize
+          scopes:
+            accounts: Read accounts information
+            direct-debits: Read direct debits information
+            payees: Read payees information
+            products: Read products information
+            customer: Read customer information

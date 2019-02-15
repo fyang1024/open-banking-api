@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
 /**
  * ResponseBankingAccountsBalances
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-02-14T17:34:34.379921+11:00[Australia/Sydney]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-02-15T14:07:08.087118+11:00[Australia/Sydney]")
 
 public class ResponseBankingAccountsBalances   {
   @JsonProperty("data")
