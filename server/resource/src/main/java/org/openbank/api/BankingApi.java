@@ -3,20 +3,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-package org.openapitools.api;
+package org.openbank.api;
 
-import org.openapitools.model.ErrorList;
-import org.openapitools.model.RequestAccountIds;
-import org.openapitools.model.ResponseBankingAccount;
-import org.openapitools.model.ResponseBankingAccounts;
-import org.openapitools.model.ResponseBankingAccountsBalances;
-import org.openapitools.model.ResponseBankingDirectDebits;
-import org.openapitools.model.ResponseBankingPayeeDetails;
-import org.openapitools.model.ResponseBankingPayees;
-import org.openapitools.model.ResponseBankingProduct;
-import org.openapitools.model.ResponseBankingProducts;
-import org.openapitools.model.ResponseBankingTransactionDetail;
-import org.openapitools.model.ResponseBankingTransactions;
+import org.openbank.model.ErrorList;
+import org.openbank.model.RequestAccountIds;
+import org.openbank.model.ResponseBankingAccount;
+import org.openbank.model.ResponseBankingAccounts;
+import org.openbank.model.ResponseBankingAccountsBalances;
+import org.openbank.model.ResponseBankingDirectDebits;
+import org.openbank.model.ResponseBankingPayeeDetails;
+import org.openbank.model.ResponseBankingPayees;
+import org.openbank.model.ResponseBankingProduct;
+import org.openbank.model.ResponseBankingProducts;
+import org.openbank.model.ResponseBankingTransactionDetail;
+import org.openbank.model.ResponseBankingTransactions;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,18 +24,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.context.request.NativeWebRequest;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import javax.validation.constraints.*;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-02-15T14:07:08.087118+11:00[Australia/Sydney]")
 
@@ -47,14 +41,11 @@ public interface BankingApi {
         return Optional.empty();
     }
 
+//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Account Detail", nickname = "getAccountDetail", notes = "Obtain detailed information on a single account", response = ResponseBankingAccount.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
-            })
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
+        })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingAccount.class) })
@@ -70,11 +61,11 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('payees')")
     @ApiOperation(value = "Get Payee Detail", nickname = "getPayeeDetail", notes = "Obtain detailed information on a single payee", response = ResponseBankingPayeeDetails.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -103,6 +94,7 @@ public interface BankingApi {
     }
 
 
+//    @PreAuthorize("#oauth2.hasScope('products')")
     @ApiOperation(value = "Get Product Detail", nickname = "getProductDetail", notes = "Obtain detailed information on a single product offered openly to the market", response = ResponseBankingProduct.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -130,7 +122,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transaction Detail", nickname = "getTransactionDetail", notes = "Obtain detailed information on a transaction for a specific account", response = ResponseBankingTransactionDetail.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -158,7 +150,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transactions For Account", nickname = "getTransactions", notes = "Obtain transactions for a specific account", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -185,7 +177,6 @@ public interface BankingApi {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }
-
 
     @ApiOperation(value = "Get Accounts", nickname = "listAccounts", notes = "Obtain a list of accounts", response = ResponseBankingAccounts.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
@@ -214,7 +205,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Bulk Balances", nickname = "listBalancesBulk", notes = "Obtain balances for multiple, filtered accounts", response = ResponseBankingAccountsBalances.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -242,8 +233,16 @@ public interface BankingApi {
 
     }
 
-
-    @ApiOperation(value = "Get Balances For Specific Accounts", nickname = "listBalancesSpecificAccounts", notes = "Obtain balances for a specified list of accounts", response = ResponseBankingAccountsBalances.class, tags={ "Accounts", })
+//    @PreAuthorize("#oauth2.hasScope('accounts')")
+    @ApiOperation(value = "Get Balances For Specific Accounts", nickname = "listBalancesSpecificAccounts", notes = "Obtain balances for a specified list of accounts", response = ResponseBankingAccountsBalances.class, authorizations = {
+        @Authorization(value = "OAuth2", scopes = {
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
+            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
+            @AuthorizationScope(scope = "payees", description = "Read payees information"),
+            @AuthorizationScope(scope = "products", description = "Read products information"),
+            @AuthorizationScope(scope = "customer", description = "Read customer information")
+        })
+    }, tags = {"Accounts",})
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingAccountsBalances.class),
         @ApiResponse(code = 422, message = "The request was well formed but was unable to be processed due to business logic specific to the request", response = ErrorList.class) })
@@ -264,7 +263,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('direct-debits')")
     @ApiOperation(value = "Get Direct Debits For Account", nickname = "listDirectDebits", notes = "Obtain direct debit authorisations for a specific account", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -292,7 +291,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('direct-debits')")
     @ApiOperation(value = "Get Bulk Direct Debits", nickname = "listDirectDebitsBulk", notes = "Obtain direct debit authorisations for multiple, filtered accounts", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -320,7 +319,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('direct-debits')")
     @ApiOperation(value = "Get Direct Debits For Specific Accounts", nickname = "listDirectDebitsSpecificAccounts", notes = "Obtain direct debit authorisations for a specified list of accounts", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -350,7 +349,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('payees')")
     @ApiOperation(value = "Get Payees", nickname = "listPayees", notes = "Obtain a list of pre-registered payees", response = ResponseBankingPayees.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -378,7 +377,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('products')")
     @ApiOperation(value = "Get Products", nickname = "listProducts", notes = "Obtain a list of products that are currently openly offered to the market", response = ResponseBankingProducts.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -406,7 +405,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transactions For Multiple Accounts", nickname = "listTransactionsBulk", notes = "Obtain transactions for multiple, filtered accounts", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
@@ -434,7 +433,7 @@ public interface BankingApi {
 
     }
 
-
+//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transactions For Specific Accounts", nickname = "listTransactionsSpecificAccounts", notes = "Obtain transactions for a specified list of transactions.", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
