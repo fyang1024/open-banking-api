@@ -30,7 +30,7 @@ public interface CommonApi {
     @ApiOperation(value = "Get Customer", nickname = "getCustomer", notes = "Obtain basic information on the customer that has authorised the current session", response = ResponseCommonCustomer.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "customer", description = "Read customer information")
-            })
+        })
     }, tags={ "Customer", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseCommonCustomer.class) })
@@ -53,7 +53,7 @@ public interface CommonApi {
     @ApiOperation(value = "Get Customer Detail", nickname = "getCustomerDetail", notes = "Obtain detailed information on the authorised customer within the current session.", response = ResponseCommonCustomerDetailed.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "customer", description = "Read customer information")
-            })
+        })
     }, tags={ "Customer", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseCommonCustomerDetailed.class) })

@@ -1,13 +1,13 @@
 package org.openbank;
 
-import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.databind.util.ISO8601Utils;
+import com.fasterxml.jackson.databind.util.StdDateFormat;
 
 import java.text.FieldPosition;
 import java.util.Date;
 
 
-public class RFC3339DateFormat extends ISO8601DateFormat {
+public class RFC3339DateFormat extends StdDateFormat {
 
   private static final long serialVersionUID = 1L;
 

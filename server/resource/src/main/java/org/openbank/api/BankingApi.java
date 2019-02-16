@@ -5,29 +5,13 @@
  */
 package org.openbank.api;
 
-import org.openbank.model.ErrorList;
-import org.openbank.model.RequestAccountIds;
-import org.openbank.model.ResponseBankingAccount;
-import org.openbank.model.ResponseBankingAccounts;
-import org.openbank.model.ResponseBankingAccountsBalances;
-import org.openbank.model.ResponseBankingDirectDebits;
-import org.openbank.model.ResponseBankingPayeeDetails;
-import org.openbank.model.ResponseBankingPayees;
-import org.openbank.model.ResponseBankingProduct;
-import org.openbank.model.ResponseBankingProducts;
-import org.openbank.model.ResponseBankingTransactionDetail;
-import org.openbank.model.ResponseBankingTransactions;
 import io.swagger.annotations.*;
+import org.openbank.model.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.NativeWebRequest;
 
 import javax.validation.Valid;
@@ -68,7 +52,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Payee Detail", nickname = "getPayeeDetail", notes = "Obtain detailed information on a single payee", response = ResponseBankingPayeeDetails.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "payees", description = "Read payees information")
-            })
+        })
     }, tags={ "Payees", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingPayeeDetails.class) })
@@ -92,7 +76,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Product Detail", nickname = "getProductDetail", notes = "Obtain detailed information on a single product offered openly to the market", response = ResponseBankingProduct.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "products", description = "Read products information")
-            })
+        })
     }, tags={ "Products", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingProduct.class) })
@@ -115,7 +99,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Transaction Detail", nickname = "getTransactionDetail", notes = "Obtain detailed information on a transaction for a specific account", response = ResponseBankingTransactionDetail.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information")
-            })
+        })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingTransactionDetail.class) })
@@ -138,7 +122,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Transactions For Account", nickname = "getTransactions", notes = "Obtain transactions for a specific account", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information")
-            })
+        })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingTransactions.class) })
@@ -161,7 +145,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Accounts", nickname = "listAccounts", notes = "Obtain a list of accounts", response = ResponseBankingAccounts.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information")
-            })
+        })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingAccounts.class) })
@@ -184,7 +168,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Bulk Balances", nickname = "listBalancesBulk", notes = "Obtain balances for multiple, filtered accounts", response = ResponseBankingAccountsBalances.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information")
-            })
+        })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "resource listing the financial balances for the account", response = ResponseBankingAccountsBalances.class) })
@@ -232,7 +216,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Direct Debits For Account", nickname = "listDirectDebits", notes = "Obtain direct debit authorisations for a specific account", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            })
+        })
     }, tags={ "Direct Debits", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingDirectDebits.class) })
@@ -255,7 +239,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Bulk Direct Debits", nickname = "listDirectDebitsBulk", notes = "Obtain direct debit authorisations for multiple, filtered accounts", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information")
-            })
+        })
     }, tags={ "Direct Debits", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingDirectDebits.class) })
@@ -278,7 +262,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Direct Debits For Specific Accounts", nickname = "listDirectDebitsSpecificAccounts", notes = "Obtain direct debit authorisations for a specified list of accounts", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            })
+        })
     }, tags={ "Direct Debits", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingDirectDebits.class),
@@ -303,7 +287,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Payees", nickname = "listPayees", notes = "Obtain a list of pre-registered payees", response = ResponseBankingPayees.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "payees", description = "Read payees information")
-            })
+        })
     }, tags={ "Payees", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingPayees.class) })
@@ -326,7 +310,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Products", nickname = "listProducts", notes = "Obtain a list of products that are currently openly offered to the market", response = ResponseBankingProducts.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "products", description = "Read products information")
-            })
+        })
     }, tags={ "Products", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingProducts.class) })
@@ -349,7 +333,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Transactions For Multiple Accounts", nickname = "listTransactionsBulk", notes = "Obtain transactions for multiple, filtered accounts", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information")
-            })
+        })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingTransactions.class) })
@@ -372,7 +356,7 @@ public interface BankingApi {
     @ApiOperation(value = "Get Transactions For Specific Accounts", nickname = "listTransactionsSpecificAccounts", notes = "Obtain transactions for a specified list of transactions.", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information")
-            })
+        })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = ResponseBankingTransactions.class),
