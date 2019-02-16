@@ -30,22 +30,22 @@ public class OpenAPIDocumentationConfig {
 
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("Consumer Data Standards")
-            .description("API sets created by the Australian Consumer Data Standards to meet the needs of the Consumer Data Right")
-            .license("MIT Licence")
-            .licenseUrl("https://opensource.org/licenses/MIT")
-            .termsOfServiceUrl("")
-            .version("1-oas3")
-            .contact(new Contact("","", ""))
-            .build();
+                .title("Consumer Data Standards")
+                .description("API sets created by the Australian Consumer Data Standards to meet the needs of the Consumer Data Right")
+                .license("MIT Licence")
+                .licenseUrl("https://opensource.org/licenses/MIT")
+                .termsOfServiceUrl("")
+                .version("1-oas3")
+                .contact(new Contact("", "", ""))
+                .build();
     }
 
     @Bean
     public Docket customImplementation(ServletContext servletContext, @Value("${openapi.consumerDataStandards.base-path:/cds-au/v1}") String basePath) {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                    .apis(RequestHandlerSelectors.basePackage("org.openbank.api"))
-                    .build()
+                .apis(RequestHandlerSelectors.basePackage("org.openbank.api"))
+                .build()
                 .securitySchemes(Arrays.asList(securityScheme()))
                 .securityContexts(Arrays.asList(securityContext()))
                 .pathProvider(new BasePathAwareRelativePathProvider(servletContext, basePath))
@@ -62,26 +62,28 @@ public class OpenAPIDocumentationConfig {
     }
 
     private SecurityScheme securityScheme() {
-        GrantType grantType = new ImplicitGrantBuilder().loginEndpoint(new LoginEndpoint(AUTH_SERVER + "oauth/authorize")).build();
-        return new OAuthBuilder()
-                .name("spring_oauth").grantTypes(Arrays.asList(grantType))
+        GrantType grantType = new ImplicitGrantBuilder()
+                .loginEndpoint(new LoginEndpoint(AUTH_SERVER + "oauth/authorize"))
+                .build();
+        return new OAuthBuilder().name("OAuth2")
+                .grantTypes(Arrays.asList(grantType))
                 .scopes(Arrays.asList(scopes()))
                 .build();
     }
 
     private SecurityContext securityContext() {
         return SecurityContext.builder().
-                securityReferences(Arrays.asList(new SecurityReference("spring_oauth", scopes()))).
+                securityReferences(Arrays.asList(new SecurityReference("OAuth2", scopes()))).
                 forPaths(PathSelectors.ant("/**")).build();
     }
 
     private AuthorizationScope[] scopes() {
         AuthorizationScope[] scopes = {
-            new AuthorizationScope("accounts", "Read accounts information"),
-            new AuthorizationScope("direct-debits", "Read direct-debits information"),
-            new AuthorizationScope("payees", "Read payees information"),
-            new AuthorizationScope("products", "Read products information"),
-            new AuthorizationScope("customer", "Read customer information")
+                new AuthorizationScope("accounts", "Read accounts information"),
+                new AuthorizationScope("direct-debits", "Read direct-debits information"),
+                new AuthorizationScope("payees", "Read payees information"),
+                new AuthorizationScope("products", "Read products information"),
+                new AuthorizationScope("customer", "Read customer information")
         };
         return scopes;
     }
@@ -96,7 +98,7 @@ public class OpenAPIDocumentationConfig {
 
         @Override
         protected String applicationPath() {
-            return  Paths.removeAdjacentForwardSlashes(UriComponentsBuilder.fromPath(super.applicationPath()).path(basePath).build().toString());
+            return Paths.removeAdjacentForwardSlashes(UriComponentsBuilder.fromPath(super.applicationPath()).path(basePath).build().toString());
         }
 
         @Override
