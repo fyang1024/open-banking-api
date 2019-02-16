@@ -42,17 +42,13 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .redirectUris("http://localhost:8080/webjars/springfox-swagger-ui/oauth2-redirect.html")
                 .authorizedGrantTypes("implicit")
                 .scopes("accounts", "payees", "products", "direct-debits", "customer")
-                .autoApprove(false)
+                .autoApprove(true)
                 .accessTokenValiditySeconds(3600);
     }
 
     @Override
     public void configure(final AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        final TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer()));
-        endpoints.tokenStore(tokenStore())
-                .tokenEnhancer(tokenEnhancerChain)
-                .authenticationManager(authenticationManager);
+        endpoints.tokenStore(tokenStore()).accessTokenConverter(accessTokenConverter()).authenticationManager(authenticationManager);
     }
 
     @Bean
@@ -60,15 +56,9 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     public DefaultTokenServices tokenServices() {
         final DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
         defaultTokenServices.setTokenStore(tokenStore());
-        defaultTokenServices.setSupportRefreshToken(true);
+        defaultTokenServices.setSupportRefreshToken(false);
         return defaultTokenServices;
     }
-
-    @Bean
-    public TokenEnhancer tokenEnhancer() {
-        return new CustomTokenEnhancer();
-    }
-
 
     @Bean
     public TokenStore tokenStore() {

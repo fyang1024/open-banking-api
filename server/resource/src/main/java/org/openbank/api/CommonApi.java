@@ -11,7 +11,6 @@ import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,13 +27,8 @@ public interface CommonApi {
         return Optional.empty();
     }
 
-//    @PreAuthorize("#oauth2.hasScope('customer')")
     @ApiOperation(value = "Get Customer", nickname = "getCustomer", notes = "Obtain basic information on the customer that has authorised the current session", response = ResponseCommonCustomer.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
             @AuthorizationScope(scope = "customer", description = "Read customer information")
             })
     }, tags={ "Customer", })
@@ -52,17 +46,12 @@ public interface CommonApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('customer')")
     @ApiOperation(value = "Get Customer Detail", nickname = "getCustomerDetail", notes = "Obtain detailed information on the authorised customer within the current session.", response = ResponseCommonCustomerDetailed.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
             @AuthorizationScope(scope = "customer", description = "Read customer information")
             })
     }, tags={ "Customer", })
@@ -80,7 +69,7 @@ public interface CommonApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 

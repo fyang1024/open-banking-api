@@ -21,6 +21,7 @@ import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,7 +42,6 @@ public interface BankingApi {
         return Optional.empty();
     }
 
-//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Account Detail", nickname = "getAccountDetail", notes = "Obtain detailed information on a single account", response = ResponseBankingAccount.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
             @AuthorizationScope(scope = "accounts", description = "Read accounts information")
@@ -65,14 +65,9 @@ public interface BankingApi {
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('payees')")
     @ApiOperation(value = "Get Payee Detail", nickname = "getPayeeDetail", notes = "Obtain detailed information on a single payee", response = ResponseBankingPayeeDetails.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "payees", description = "Read payees information")
             })
     }, tags={ "Payees", })
     @ApiResponses(value = { 
@@ -89,19 +84,14 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
 
-//    @PreAuthorize("#oauth2.hasScope('products')")
     @ApiOperation(value = "Get Product Detail", nickname = "getProductDetail", notes = "Obtain detailed information on a single product offered openly to the market", response = ResponseBankingProduct.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "products", description = "Read products information")
             })
     }, tags={ "Products", })
     @ApiResponses(value = { 
@@ -118,18 +108,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transaction Detail", nickname = "getTransactionDetail", notes = "Obtain detailed information on a transaction for a specific account", response = ResponseBankingTransactionDetail.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
             })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
@@ -146,18 +131,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transactions For Account", nickname = "getTransactions", notes = "Obtain transactions for a specific account", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
             })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
@@ -174,17 +154,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
     @ApiOperation(value = "Get Accounts", nickname = "listAccounts", notes = "Obtain a list of accounts", response = ResponseBankingAccounts.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
             })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
@@ -201,18 +177,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Bulk Balances", nickname = "listBalancesBulk", notes = "Obtain balances for multiple, filtered accounts", response = ResponseBankingAccountsBalances.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
             })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
@@ -229,18 +200,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Balances For Specific Accounts", nickname = "listBalancesSpecificAccounts", notes = "Obtain balances for a specified list of accounts", response = ResponseBankingAccountsBalances.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
         })
     }, tags = {"Accounts",})
     @ApiResponses(value = { 
@@ -259,18 +225,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('direct-debits')")
     @ApiOperation(value = "Get Direct Debits For Account", nickname = "listDirectDebits", notes = "Obtain direct debit authorisations for a specific account", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
             @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
             })
     }, tags={ "Direct Debits", })
     @ApiResponses(value = { 
@@ -287,18 +248,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('direct-debits')")
     @ApiOperation(value = "Get Bulk Direct Debits", nickname = "listDirectDebitsBulk", notes = "Obtain direct debit authorisations for multiple, filtered accounts", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information")
             })
     }, tags={ "Direct Debits", })
     @ApiResponses(value = { 
@@ -315,18 +271,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('direct-debits')")
     @ApiOperation(value = "Get Direct Debits For Specific Accounts", nickname = "listDirectDebitsSpecificAccounts", notes = "Obtain direct debit authorisations for a specified list of accounts", response = ResponseBankingDirectDebits.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
             @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
             })
     }, tags={ "Direct Debits", })
     @ApiResponses(value = { 
@@ -345,18 +296,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('payees')")
     @ApiOperation(value = "Get Payees", nickname = "listPayees", notes = "Obtain a list of pre-registered payees", response = ResponseBankingPayees.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "payees", description = "Read payees information")
             })
     }, tags={ "Payees", })
     @ApiResponses(value = { 
@@ -373,18 +319,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('products')")
     @ApiOperation(value = "Get Products", nickname = "listProducts", notes = "Obtain a list of products that are currently openly offered to the market", response = ResponseBankingProducts.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "products", description = "Read products information")
             })
     }, tags={ "Products", })
     @ApiResponses(value = { 
@@ -401,18 +342,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transactions For Multiple Accounts", nickname = "listTransactionsBulk", notes = "Obtain transactions for multiple, filtered accounts", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
             })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
@@ -429,18 +365,13 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
-//    @PreAuthorize("#oauth2.hasScope('accounts')")
     @ApiOperation(value = "Get Transactions For Specific Accounts", nickname = "listTransactionsSpecificAccounts", notes = "Obtain transactions for a specified list of transactions.", response = ResponseBankingTransactions.class, authorizations = {
         @Authorization(value = "OAuth2", scopes = {
-            @AuthorizationScope(scope = "accounts", description = "Read accounts information"),
-            @AuthorizationScope(scope = "direct-debits", description = "Read direct debits information"),
-            @AuthorizationScope(scope = "payees", description = "Read payees information"),
-            @AuthorizationScope(scope = "products", description = "Read products information"),
-            @AuthorizationScope(scope = "customer", description = "Read customer information")
+            @AuthorizationScope(scope = "accounts", description = "Read accounts information")
             })
     }, tags={ "Accounts", })
     @ApiResponses(value = { 
@@ -459,7 +390,7 @@ public interface BankingApi {
                 }
             }
         });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
