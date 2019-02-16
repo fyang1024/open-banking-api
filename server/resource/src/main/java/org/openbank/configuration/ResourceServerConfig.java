@@ -1,9 +1,5 @@
 package org.openbank.configuration;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Arrays;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -15,10 +11,11 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.DelegatingJwtClaimsSetVerifier;
-import org.springframework.security.oauth2.provider.token.store.IssuerClaimVerifier;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtClaimsSetVerifier;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+
+import java.util.Arrays;
 
 @Configuration
 @EnableResourceServer
@@ -28,11 +25,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(final HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .and().authorizeRequests()
-                .anyRequest().permitAll();
+                .antMatchers("/**/banking/accounts/**").access("#oauth2.hasScope('accounts')")
+                .antMatchers("/**/banking/payees/**").access("#oauth2.hasScope('payees')")
+                .antMatchers("/**/banking/products/**").access("#oauth2.hasScope('products')")
+                .antMatchers("/**/banking/**/direct-debits/**").access("#oauth2.hasScope('direct-debits')")
+                .antMatchers("/**/common/customer/**").access("#oauth2.hasScope('customer')");
 
     }
-
-    // JWT token store
 
     @Override
     public void configure(final ResourceServerSecurityConfigurer config) {
@@ -54,19 +53,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Bean
     public JwtClaimsSetVerifier jwtClaimsSetVerifier() {
-        return new DelegatingJwtClaimsSetVerifier(Arrays.asList(issuerClaimVerifier(), customJwtClaimVerifier()));
+        return new DelegatingJwtClaimsSetVerifier(Arrays.asList(customJwtClaimVerifier()));
     }
 
-    @Bean
-    public JwtClaimsSetVerifier issuerClaimVerifier() {
-        try {
-            return new IssuerClaimVerifier(new URL("http://localhost:9090"));
-        } catch (final MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Bean
+        @Bean
     public JwtClaimsSetVerifier customJwtClaimVerifier() {
         return new CustomClaimVerifier();
     }
