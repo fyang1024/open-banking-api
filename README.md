@@ -24,5 +24,5 @@ Both projects are implemented with Spring boot 2 framework.
 
 1. Open a terminal and navigate to `server/auth` folder and run `mvn spring-boot:run` to start OAuth2 server at http://localhost:9090
 2. Open another terminal navigate to `server/resource` folder and run `mvn spring-boot:run` to start Resource server at http://localhost:8080
-3. Open a browser and navigate to http://localost:8080 and you should see the swagger UI.
+3. Open a browser and navigate to http://localost:8080 and you should see the swagger UI play with APIs
 ![Screen](screen.png)
