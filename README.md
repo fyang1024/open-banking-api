@@ -1,6 +1,6 @@
 # Open Bank API demo
 
-This is project is to demonstrate OpenAPI 3.0 and OAuth2 technology.
+This is project is to demonstrate [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) and [OAuth2 technology](https://alexbilbie.com/guide-to-oauth-2-grants/).
 
 `cds.yaml` is the API spec in OpenAPI 3.0 format. It is converted from [the doc in OpenAPI 2.0 format](https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/standards/master/swagger-gen/cds_full.json). 
 
@@ -12,9 +12,10 @@ The `server` folder contains 2 projects:
 
 Both projects are implemented with Spring boot 2 framework.
 
+I have deployed the them on Heroku. You can play it here https://openbank-resource.herokuapp.com
+The username / password are user / pass respectively when you authorize the swagger ui to access the APIs  
 
-
-### System requirements:
+### Before you start
 
 1. Install [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
@@ -26,3 +27,10 @@ Both projects are implemented with Spring boot 2 framework.
 2. Open another terminal navigate to `server/resource` folder and run `mvn spring-boot:run` to start Resource server at http://localhost:8080
 3. Open a browser and navigate to http://localost:8080 and you should see the swagger UI play with APIs
 ![Screen](screen.png)
+4. Click "Authorize" button and a popup will show
+![Popup](popup.png)
+5. Click "Authorize" on the popup, a new tab will be opened for user to login
+![Login](login.png)
+6. Type "user" and "pass" as username / password and Click Sign in, you'll be redirected to the API screen
+7. You are authorised to get protected resource from the API now.
+ 
