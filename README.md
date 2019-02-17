@@ -6,6 +6,10 @@ This is project is to demonstrate [OpenAPI 3.0](https://github.com/OAI/OpenAPI-S
 
 The spec exposes a set of banking related APIs and a common customer API. I have added OAuth2 security scheme onto it.
 
+The `client` folder contains 2 projects:
+* `java` is the java version client
+* `js` is the nodejs version client
+
 The `server` folder contains 2 projects:
 * `auth` is the OAuth2 server
 * `resource` is the Resource server (API end points provider)

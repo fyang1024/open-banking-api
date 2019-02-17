@@ -1,0 +1,21 @@
+{
+  "name": "consumer_data_standards",
+  "version": "1.0.0",
+  "description": "API sets created by the Australian Consumer Data Standards to meet the needs of the Consumer Data Right",
+  "license": "MIT Licence",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.7.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "^5.2.0",
+    "sinon": "1.17.3"
+  }
+}
