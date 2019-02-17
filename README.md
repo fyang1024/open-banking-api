@@ -12,6 +12,8 @@ The `server` folder contains 2 projects:
 
 Both projects are implemented with Spring boot 2 framework.
 
+I recorded a [YouTube video](https://www.youtube.com/watch?v=I7Yisb555fs) to demo them working together.
+
 I have deployed the them on Heroku. You can play it here https://openbank-resource.herokuapp.com
 The username / password are user / pass respectively when you authorize the swagger ui to access the APIs  
 
