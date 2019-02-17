@@ -1,8 +1,8 @@
 # Open Bank API demo
 
-This is project is to demonstrate [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) and [OAuth2 technology](https://alexbilbie.com/guide-to-oauth-2-grants/).
+This is project is to demonstrate [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) and [OAuth2](https://alexbilbie.com/guide-to-oauth-2-grants/) technology.
 
-`cds.yaml` is the API spec in OpenAPI 3.0 format. It is converted from [the doc in OpenAPI 2.0 format](https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/standards/master/swagger-gen/cds_full.json). 
+[cds.yaml](https://github.com/fyang1024/open-bank-api/blob/master/cds.yaml) is the API spec in OpenAPI 3.0 format. It is converted from [the doc in OpenAPI 2.0 format](https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/standards/master/swagger-gen/cds_full.json). 
 
 The spec exposes a set of banking related APIs and a common customer API. I have added OAuth2 security scheme onto it.
 
