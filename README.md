@@ -31,7 +31,7 @@ The username / password are user / pass respectively when you authorize the swag
 
 1. Open a terminal and navigate to `server/auth` folder and run `mvn spring-boot:run` to start OAuth2 server at http://localhost:9090
 2. Open another terminal navigate to `server/resource` folder and run `mvn spring-boot:run` to start Resource server at http://localhost:8080
-3. Open a browser and navigate to http://localost:8080 and you should see the swagger UI play with APIs
+3. Open a browser and navigate to http://localost:8080 and you should see the swagger UI and be able to play with APIs
 ![Screen](screen.png)
 4. Click "Authorize" button and a popup will show
 ![Popup](popup.png)
