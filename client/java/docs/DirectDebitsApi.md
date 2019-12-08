@@ -23,7 +23,7 @@ Obtain direct debit authorisations for a specific account
 ApiClient
 ApiException
 Configuration
-//import org.openbank.client.auth.*;
+//import org.openbanking.client.auth.*;
 DirectDebitsApi
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
@@ -77,11 +77,11 @@ Obtain direct debit authorisations for multiple, filtered accounts
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.DirectDebitsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.DirectDebitsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -136,11 +136,11 @@ Obtain direct debit authorisations for a specified list of accounts
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.DirectDebitsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.DirectDebitsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

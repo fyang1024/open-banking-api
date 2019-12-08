@@ -72,10 +72,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openbank.client.*;
-import org.openbank.client.auth.*;
-import org.openbank.client.model.*;
-import org.openbank.client.api.AccountsApi;
+import org.openbanking.client.*;
+import org.openbanking.client.auth.*;
+import org.openbanking.client.model.*;
+import org.openbanking.client.api.AccountsApi;
 
 import java.io.File;
 import java.util.*;

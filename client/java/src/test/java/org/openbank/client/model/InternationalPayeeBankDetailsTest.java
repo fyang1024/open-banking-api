@@ -11,9 +11,9 @@
  */
 
 
-package org.openbank.client.model;
+package org.openbanking.client.model;
 
-import org.openbank.client.model.InternationalPayeeBankDetails;
+import org.openbanking.client.model.InternationalPayeeBankDetails;
 import org.junit.Test;
 
 

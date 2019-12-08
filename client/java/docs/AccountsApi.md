@@ -28,7 +28,7 @@ Obtain detailed information on a single account
 ApiClient
 ApiException
 Configuration
-//import org.openbank.client.auth.*;
+//import org.openbanking.client.auth.*;
 AccountsApi
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
@@ -78,11 +78,11 @@ Obtain detailed information on a transaction for a specific account
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.AccountsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.AccountsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -133,11 +133,11 @@ Obtain transactions for a specific account
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.AccountsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.AccountsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -200,11 +200,11 @@ Obtain a list of accounts
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.AccountsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.AccountsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -261,11 +261,11 @@ Obtain balances for multiple, filtered accounts
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.AccountsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.AccountsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -322,11 +322,11 @@ Obtain balances for a specified list of accounts
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.AccountsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.AccountsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -375,11 +375,11 @@ Obtain transactions for multiple, filtered accounts
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.AccountsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.AccountsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -446,11 +446,11 @@ Obtain transactions for a specified list of transactions.
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.AccountsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.AccountsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

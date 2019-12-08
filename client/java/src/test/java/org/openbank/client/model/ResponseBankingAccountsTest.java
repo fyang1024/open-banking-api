@@ -11,9 +11,9 @@
  */
 
 
-package org.openbank.client.model;
+package org.openbanking.client.model;
 
-import org.openbank.client.model.ResponseBankingAccounts;
+import org.openbanking.client.model.ResponseBankingAccounts;
 import org.junit.Test;
 
 

@@ -11,10 +11,10 @@
  */
 
 
-package org.openbank.client.model;
+package org.openbanking.client.model;
 
 import org.junit.Test;
-import org.openbank.client.model.AccountDiscounts;
+import org.openbanking.client.model.AccountDiscounts;
 
 
 /**

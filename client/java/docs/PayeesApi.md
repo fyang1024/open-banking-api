@@ -19,11 +19,11 @@ Obtain detailed information on a single payee
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.PayeesApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.PayeesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -75,7 +75,7 @@ Obtain a list of pre-registered payees
 ApiClient
 ApiException
 Configuration
-//import org.openbank.client.auth.*;
+//import org.openbanking.client.auth.*;
 PayeesApi
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();

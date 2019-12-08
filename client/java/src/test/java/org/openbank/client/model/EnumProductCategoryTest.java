@@ -11,7 +11,7 @@
  */
 
 
-package org.openbank.client.model;
+package org.openbanking.client.model;
 
 import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;

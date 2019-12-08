@@ -19,11 +19,11 @@ Obtain basic information on the customer that has authorised the current session
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.CustomerApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.CustomerApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -68,11 +68,11 @@ Obtain detailed information on the authorised customer within the current sessio
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.CustomerApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.CustomerApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

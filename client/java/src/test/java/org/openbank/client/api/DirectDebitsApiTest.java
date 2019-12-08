@@ -11,12 +11,12 @@
  */
 
 
-package org.openbank.client.api;
+package org.openbanking.client.api;
 
-import org.openbank.client.ApiException;
-import org.openbank.client.api.DirectDebitsApi;
-import org.openbank.client.model.RequestAccountIds;
-import org.openbank.client.model.ResponseBankingDirectDebits;
+import org.openbanking.client.ApiException;
+import org.openbanking.client.api.DirectDebitsApi;
+import org.openbanking.client.model.RequestAccountIds;
+import org.openbanking.client.model.ResponseBankingDirectDebits;
 import org.junit.Test;
 import org.junit.Ignore;
 

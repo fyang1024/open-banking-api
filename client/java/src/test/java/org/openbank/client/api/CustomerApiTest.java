@@ -11,12 +11,12 @@
  */
 
 
-package org.openbank.client.api;
+package org.openbanking.client.api;
 
-import org.openbank.client.ApiException;
-import org.openbank.client.api.CustomerApi;
-import org.openbank.client.model.ResponseCommonCustomer;
-import org.openbank.client.model.ResponseCommonCustomerDetailed;
+import org.openbanking.client.ApiException;
+import org.openbanking.client.api.CustomerApi;
+import org.openbanking.client.model.ResponseCommonCustomer;
+import org.openbanking.client.model.ResponseCommonCustomerDetailed;
 import org.junit.Test;
 import org.junit.Ignore;
 

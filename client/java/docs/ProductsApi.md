@@ -19,11 +19,11 @@ Obtain detailed information on a single product offered openly to the market
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.ProductsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.ProductsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -72,11 +72,11 @@ Obtain a list of products that are currently openly offered to the market
 ### Example
 ```java
 // Import classes:
-//import org.openbank.client.ApiClient;
-//import org.openbank.client.ApiException;
-//import org.openbank.client.Configuration;
-//import org.openbank.client.auth.*;
-//import org.openbank.client.api.ProductsApi;
+//import org.openbanking.client.ApiClient;
+//import org.openbanking.client.ApiException;
+//import org.openbanking.client.Configuration;
+//import org.openbanking.client.auth.*;
+//import org.openbanking.client.api.ProductsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

@@ -11,9 +11,9 @@
  */
 
 
-package org.openbank.client.model;
+package org.openbanking.client.model;
 
-import org.openbank.client.model.PhysicalAddress;
+import org.openbanking.client.model.PhysicalAddress;
 import org.junit.Test;
 
 

@@ -11,12 +11,12 @@
  */
 
 
-package org.openbank.client.api;
+package org.openbanking.client.api;
 
-import org.openbank.client.ApiException;
-import org.openbank.client.api.PayeesApi;
-import org.openbank.client.model.ResponseBankingPayeeDetails;
-import org.openbank.client.model.ResponseBankingPayees;
+import org.openbanking.client.ApiException;
+import org.openbanking.client.api.PayeesApi;
+import org.openbanking.client.model.ResponseBankingPayeeDetails;
+import org.openbanking.client.model.ResponseBankingPayees;
 import org.junit.Test;
 import org.junit.Ignore;
 

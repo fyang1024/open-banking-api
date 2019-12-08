@@ -11,16 +11,16 @@
  */
 
 
-package org.openbank.client.api;
+package org.openbanking.client.api;
 
-import org.openbank.client.ApiException;
-import org.openbank.client.api.AccountsApi;
-import org.openbank.client.model.RequestAccountIds;
-import org.openbank.client.model.ResponseBankingAccount;
-import org.openbank.client.model.ResponseBankingAccounts;
-import org.openbank.client.model.ResponseBankingAccountsBalances;
-import org.openbank.client.model.ResponseBankingTransactionDetail;
-import org.openbank.client.model.ResponseBankingTransactions;
+import org.openbanking.client.ApiException;
+import org.openbanking.client.api.AccountsApi;
+import org.openbanking.client.model.RequestAccountIds;
+import org.openbanking.client.model.ResponseBankingAccount;
+import org.openbanking.client.model.ResponseBankingAccounts;
+import org.openbanking.client.model.ResponseBankingAccountsBalances;
+import org.openbanking.client.model.ResponseBankingTransactionDetail;
+import org.openbanking.client.model.ResponseBankingTransactions;
 import org.junit.Test;
 import org.junit.Ignore;
 
