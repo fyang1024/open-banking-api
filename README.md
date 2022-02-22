@@ -1,4 +1,4 @@
-# Open Bank API demo
+# Open Banking API demo
 
 This is project is to demonstrate [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) and [OAuth2](https://alexbilbie.com/guide-to-oauth-2-grants/) technology.
 
